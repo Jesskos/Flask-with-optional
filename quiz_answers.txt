@@ -1,0 +1,66 @@
+Resourced Used to Complete Questions (in addition to class lecture notes):
+
+(1) w3schools.com
+(2) https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm
+(3) https://howdns.works/ep1/
+(4) https://www.tutorialspoint.com/http/ (to help better understand header)
+(5) Homework reading: https://www.aboutcookies.org/cookie-faq/, https://www.plus.net/home-broadband/content/what-is-a-cookie
+
+Responses to Questions: 
+
+Question 1. D (Two blue boxes on top of each other, 1st 300px tall, 2nd 400 px tall)
+
+Explanation: <div> makes block elements.  None of the boxes could be green since .page-segment was not used in html.
+
+______
+
+Question 2. D (Two boxes, side by side, first one pink, second one blue). 
+
+Explanation: The blue color in ID trumps pink color specified in class. <Span> makes inline elements. 
+______
+
+Question 3.  B (Two boxes, on top of each other, both pink background, black border
+
+Explanation: <p> element is type of block element, so they should be on top of one another. Border is contained in .special and .small-section. In the <head>, .special occurs before .small-section. In the body, for element <p class=“small-section special”>, the border will be black. Although .special is included, the border for .small-section will win because it occurs after .special. 
+
+______
+
+Question 4. C (Two links, the first one orange, the second one red)
+Explanation: Class selectors are more specific than element selectors, so first link becomes orange. ID selected are more specific that class selectors, so second element becomes red. 
+
+______
+
+Question 5. D (Prevent caching)
+
+Explanation: Web applications connect to databases, produce dynamic HTML, handle web requests, and cache page for performance. (page 3 of lecture on Flask)
+
+_______
+
+Question 6. C (The Port Number)
+
+Explanation: The port number is not always displayed because for http, the port defaults to 80 (page 2 of lecture notes on How the Web Works)
+
+________
+
+Question 7. B (To store structured metadata about HTTP request or response)
+
+Explanation: Headers store content type (html/text for web pages), date/time server things it is, caching information, etc. (page 6 of lecture notes on How the Web Works) 
+
+_______
+
+Question 8. A (A piece of data that is typically stored in the client and can be accessed by the server)
+
+_______
+
+Question 9. D
+
+{% for color in colors%}
+<p> {{color}} </p>
+{%endfor%}
+
+_______
+
+Question 10.  D (A test that checks whether the calculation for an order cost is correct in relation to a given set of items in the shopping cart. 
+
+Explanation: Integration tests check to make sure that the parts work together. (A) and (B) route to a new page and involve multiple parts. (C) checks page route to correct HTML (2 parts). (D) is focused on a function that calculates total of items in shopping cart, which appears to be 1 part. 
+
