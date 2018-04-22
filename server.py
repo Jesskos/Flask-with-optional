@@ -34,7 +34,21 @@ MOST_LOVED_MELONS = {
     },
 }
 
-# YOUR ROUTES GO HERE
+@app.route("/")
+def index():
+
+    return render_template("homepage.html")
+
+
+@app.route("/top-melons")
+def top_melons():
+    """returns top melons"""
+
+    return render_template("top-melons.html", melons = melons)
+
+
+
+
 
 
 if __name__ == "__main__":
