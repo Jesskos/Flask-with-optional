@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>{% block title %} BASE {% endblock %}
+  </title>
+  <style>
+	.ubermelon{
+	color: DeepPink;
+	background-color: LightGreen;
+	text-align: center;
+
+    }
+    .line{
+	background-color: DeepPink;
+	text-align: center;
+	height: 25px
+
+    }
+  </style>
+
+</head>
+<body>
+	<div><h2 class="ubermelon">UBERMELON</h2></div><div class="line"></div>
+   {% block body %}
+      BODY 
+  {% endblock %}
+</body>
+</html>
+
+

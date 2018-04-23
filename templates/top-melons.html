@@ -1,20 +1,47 @@
+{% extends "base.html" %}
+
+{% block body %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Top Melons</title>
-    <h1> Welcome {{session["name"] }}! </h1>
+    <h1 class=melons> Welcome {{session["name"] }}! </h1>
     <link rel="stylesheet" type="text/css" href="/static/styles.css">
-</head>
-<body>
 
-<!-- Create a div for every Most Loved Melon using a Jinja for loop -->
+  <style>
+  
+
+  .melons{
+    color: green;
+    font-family: sans-serif;
+  }
+
+ 
+  </style>
+</head>
+<body bgcolor="MistyRose">
+
+<!-- added <p> element so all melons appeared on different lines as in picture, but removed it because I liked the way that it looked before -->
   {% for melon in melons %}
     <div class='melon-div'>
-       <h3> {{session["name"] }}, this is a {{ melons[melon]["name"] }} </h3> 
-       <h2>Loved {{ melons[melon]["num_loves"] }} times.</h2>
+       <h3 class="melons"> {{session["name"] }}, this is a {{ melons[melon]["name"] }} </h3> 
+       <h2 class="melons">Loved {{ melons[melon]["num_loves"] }} times.</h2>
        <img src= {{ melons[melon]["img"] }} >
     </div>
   {% endfor %}
 
 </body>
 </html>
+
+{% endblock %}
+
+<!-- added <p> element so all melons appeared on different lines as in picture, but removed it because I liked the way that it looked before -->
+<!--   {% for melon in melons %}
+    <p><div class='melon-div'>
+       <h3> {{session["name"] }}, this is a {{ melons[melon]["name"] }} </h3> 
+       <h2>Loved {{ melons[melon]["num_loves"] }} times.</h2>
+       <img src= {{ melons[melon]["img"] }} >
+    </div></p>
+  {% endfor %} -->
+
