@@ -27,7 +27,7 @@
     <div class='melon-div'>
        <h3 class="melons"> {{session["name"] }}, this is a {{ melons[melon]["name"] }} </h3> 
        <h2 class="melons">Loved {{ melons[melon]["num_loves"] }} times.</h2>
-       <img src= {{ melons[melon]["img"] }} >
+       <div border:10px color: black><img border: src= {{ melons[melon]["img"] }} ></div>
     </div>
   {% endfor %}
 
