@@ -44,9 +44,17 @@ def index():
 def top_melons():
     """returns top melons"""
 
-    return render_template("top-melons.html", melons = melons)
+    return render_template("top-melons.html", melons=MOST_LOVED_MELONS)
 
+@app.route("/get-name")
+def get_name():
 
+    name = request.args.get("name")
+    session["name"] = name 
+
+    return redirect("top-melons")
+    # I get this message when I redirect:
+    # The Flask Debug Toolbar has intercepted a redirect to the above URL for debug viewing purposes. You can click the above link to continue with the redirect as normal. If you'd like to disable this feature, you can set the config variable DEBUG_TB_INTERCEPT_REDIRECTS to False.
 
 
 
