@@ -37,12 +37,19 @@ MOST_LOVED_MELONS = {
 @app.route("/")
 def index():
 
+    if "name" in session:
+        return render_template("top-melons.html", melons=MOST_LOVED_MELONS)
+
+
     return render_template("homepage.html")
 
 
 @app.route("/top-melons")
 def top_melons():
     """returns top melons"""
+
+    if "name" not in session: 
+        return render_template("homepage.html")
 
     return render_template("top-melons.html", melons=MOST_LOVED_MELONS)
 
@@ -52,7 +59,7 @@ def get_name():
     name = request.args.get("name")
     session["name"] = name 
 
-    return redirect("top-melons")
+    return redirect("/top-melons")
     # I get this message when I redirect:
     # The Flask Debug Toolbar has intercepted a redirect to the above URL for debug viewing purposes. You can click the above link to continue with the redirect as normal. If you'd like to disable this feature, you can set the config variable DEBUG_TB_INTERCEPT_REDIRECTS to False.
 
