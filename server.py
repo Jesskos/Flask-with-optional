@@ -63,6 +63,44 @@ def get_name():
     # I get this message when I redirect:
     # The Flask Debug Toolbar has intercepted a redirect to the above URL for debug viewing purposes. You can click the above link to continue with the redirect as normal. If you'd like to disable this feature, you can set the config variable DEBUG_TB_INTERCEPT_REDIRECTS to False.
 
+@app.route("/love-melon", methods=["POST"])
+def love_melon():
+
+    # Attempt to complete using dictionary
+    #loved_melon = request.args.get("melon")
+    # print loved_melon
+    # MOST_LOVED_MELONS[loved_melon]['num_loves'] += 1 
+
+    loved_melon = request.form.get('melon')
+    # melon_name = request.form.get('melon')
+    # when using jinja for loop.got this response error: list indices must be integers, not unicode
+
+
+
+
+    # if 'cren' == request.form.get('cren'):
+    #     loved_melon = 'cren'
+    # elif 'jubi' == request.form.get('jubi'):
+    #     loved_melon = 'jubi'
+    # elif 'sugb' == request.form.get('sugb'):
+    #     loved_melon = 'sugb'
+    # elif 'texb' == request.form.get('texb'):
+    #     loved_melon = 'texb'
+
+    # if loved_melon == True:
+    [MOST_LOVED_MELONS][loved_melon]['num_loves'] += 1 
+
+
+    if "name" in session:
+        name = session["name"]
+
+    return render_template("thank-you.html", loved_melon=loved_melon)
+
+@app.route("/thank-you")
+def thank_you():
+
+    return render_template("thank-you.html")
+
 
 
 

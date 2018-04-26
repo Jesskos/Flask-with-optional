@@ -27,9 +27,29 @@
     <div class='melon-div'>
        <h3 class="melons"> {{session["name"] }}, this is a {{ melons[melon]["name"] }} </h3> 
        <h2 class="melons">Loved {{ melons[melon]["num_loves"] }} times.</h2>
-       <div border:10px color: black><img border: src= {{ melons[melon]["img"] }} ></div>
+       <p><img src= {{ melons[melon]["img"] }} ></p>
     </div>
   {% endfor %}
+
+
+<center><h3 class="melons"> Love a melon! Choose from the following: </h3></center>
+<center><form action="/love-melon" method="post">
+  <select name="melons"> 
+    {% for melon in melons %}
+      <option value='melon'> {{ melons[melon]["name"] }}</option>
+<!--          <option value='cren'> Texas Golden Watermelon </option>
+         <option value='jubi'> Jubilee Watermelon </option>
+         <option value='sugb'> Crenshaw </option>
+         <option value='texb'> Sugar Baby Watermlon </option> -->
+    {% endfor %} 
+<!--       <option value='cren'> Crenshaw </option>
+      <option value='jubi'> Jubilee Watermelon </option>
+      <option value='sugb'> Sugar Baby Watermelon </option>
+      <option value='texb'> Texas Golden Watermelon </option> -->
+      <input type="submit">
+  </select>
+
+  </form></center>
 
 </body>
 </html>

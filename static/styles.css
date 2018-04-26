@@ -9,10 +9,6 @@ attemped to make border on image as above*/
     display: inline-block;
     padding: 10px;
     width: 205px;
-    border: 15px solid green;
 }
 
 
-p {
-	border: 200px color:green;
-}
